@@ -1946,7 +1946,7 @@ class CanadaeCoin(AuxPowMixin, Coin):
 
     
 class CanadaeCoinVol1(AuxPowMixin, Coin):
-    NAME = "CanadaeCoin"
+    NAME = "CanadaeCoinVol1"
     SHORTNAME = "CDNVol1"
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("0488b21e")
