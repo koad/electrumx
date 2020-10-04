@@ -1920,10 +1920,34 @@ class Bitzeny(Coin):
         import zny_yespower_0_5
         return zny_yespower_0_5.getPoWHash(header)
 
-
+    
 class CanadaeCoin(AuxPowMixin, Coin):
     NAME = "CanadaeCoin"
     SHORTNAME = "CDN"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("1C")
+    WIF_BYTE = bytes.fromhex("9c")
+    GENESIS_HASH = ('ceac4f4dc5aa01eb7fe5b36410cd7a1c'
+                    'b0f89856c76401a69d1b30fb8bc0e3bf')
+    ESTIMATE_FEE = 0.001
+    RELAY_FEE = 0.001
+    DAEMON = daemon.FakeEstimateFeeDaemon
+    TX_COUNT = 11000
+    TX_COUNT_HEIGHT = 1100
+    TX_PER_BLOCK = 1
+    RPC_PORT = 34330
+    REORG_LIMIT = 1000
+    DESERIALIZER = lib_tx.DeserializerAuxPowSegWit
+    PEERS = [
+        'explorer.canadaecoin.ca s t',
+    ]
+
+    
+class CanadaeCoinVol1(AuxPowMixin, Coin):
+    NAME = "CanadaeCoin"
+    SHORTNAME = "CDNVol1"
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("0488b21e")
     XPRV_VERBYTES = bytes.fromhex("0488ade4")
